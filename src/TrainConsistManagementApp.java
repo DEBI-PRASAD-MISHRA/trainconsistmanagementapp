@@ -98,5 +98,16 @@ public class TrainConsistManagementApp {
                 .reduce(0, Integer::sum);
         System.out.println("Total Seating Capacity: " + totalSeats);
 
+        // UC11 — Validate Train ID & Cargo Codes
+        System.out.println("\n--- UC11: Validate Train ID & Cargo Codes ---");
+        String testTrainId = "EXP101";
+        List<String> cargoCodes = Arrays.asList("CRG01", "C@RGO");
+        boolean isTrainIdValid = testTrainId.matches("^[A-Za-z]+.*\\d+$");
+        System.out.println("Train ID '" + testTrainId + "' valid? " + isTrainIdValid);
+        for (String code : cargoCodes) {
+            boolean isCargoValid = code.matches("^[A-Za-z0-9]+$");
+            System.out.println("Cargo Code '" + code + "' valid? " + isCargoValid);
+        }
+
     }
 }

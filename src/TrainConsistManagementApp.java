@@ -139,5 +139,17 @@ public class TrainConsistManagementApp {
         System.out.println("Stream Duration: " + durationStream + " ns");
         System.out.println("Faster approach: " + (durationLoop < durationStream ? "Loop" : "Stream"));
 
+        // UC14 — Handle Invalid Bogie Capacity
+        System.out.println("\n--- UC14: Handle Invalid Capacity ---");
+        int testCapacity = -5; // Simulating user input
+        try {
+            if (testCapacity <= 0) {
+                throw new InvalidCapacityException("Capacity must be greater than zero. Received: " + testCapacity);
+            }
+            System.out.println("Capacity is valid: " + testCapacity);
+        } catch (InvalidCapacityException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+
     }
 }

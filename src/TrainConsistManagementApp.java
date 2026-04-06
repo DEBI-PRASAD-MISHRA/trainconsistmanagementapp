@@ -80,5 +80,17 @@ public class TrainConsistManagementApp {
                 .collect(Collectors.toList());
         System.out.println("Filtered Bogies (AC/Sleeper): " + filteredBogies);
 
+        // UC9 — Group Bogies by Type
+        System.out.println("\n--- UC9: Group Bogies by Type ---");
+        Map<String, List<String>> groupedBogies = arrayListBogies.stream()
+                .collect(Collectors.groupingBy(b -> {
+                    if (b.contains("AC")) return "AC";
+                    if (b.contains("Sleeper")) return "Sleeper";
+                    return "General";
+                }));
+        for (Map.Entry<String, List<String>> entry : groupedBogies.entrySet()) {
+            System.out.println("Type: " + entry.getKey() + " -> " + entry.getValue());
+        }
+
     }
 }

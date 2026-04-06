@@ -73,5 +73,12 @@ public class TrainConsistManagementApp {
             System.out.println("Bogie: " + entry.getKey() + " -> " + entry.getValue());
         }
 
+        // UC8 — Filter Passenger Bogies Using Streams
+        System.out.println("\n--- UC8: Filter Bogies Using Streams ---");
+        List<String> filteredBogies = arrayListBogies.stream()
+                .filter(b -> b.contains("AC") || b.contains("Sleeper"))
+                .collect(Collectors.toList());
+        System.out.println("Filtered Bogies (AC/Sleeper): " + filteredBogies);
+
     }
 }

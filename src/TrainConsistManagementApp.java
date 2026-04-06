@@ -120,5 +120,24 @@ public class TrainConsistManagementApp {
             System.out.println("Bogie " + entry.getKey() + " (Load: " + entry.getValue() + " tons) - Compliant: " + isCompliant);
         }
 
+        // UC13 — Performance Comparison (Loops vs Streams)
+        System.out.println("\n--- UC13: Performance Comparison ---");
+        long startTimeLoop = System.nanoTime();
+        List<String> loopFiltered = new ArrayList<>();
+        for (String b : arrayListBogies) {
+            if (b.contains("AC")) loopFiltered.add(b);
+        }
+        long endTimeLoop = System.nanoTime();
+        long durationLoop = endTimeLoop - startTimeLoop;
+
+        long startTimeStream = System.nanoTime();
+        List<String> streamFiltered = arrayListBogies.stream().filter(b -> b.contains("AC")).collect(Collectors.toList());
+        long endTimeStream = System.nanoTime();
+        long durationStream = endTimeStream - startTimeStream;
+
+        System.out.println("Loop Duration: " + durationLoop + " ns");
+        System.out.println("Stream Duration: " + durationStream + " ns");
+        System.out.println("Faster approach: " + (durationLoop < durationStream ? "Loop" : "Stream"));
+
     }
 }

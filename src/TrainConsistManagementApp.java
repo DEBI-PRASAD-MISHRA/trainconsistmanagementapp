@@ -65,5 +65,13 @@ public class TrainConsistManagementApp {
             System.out.println("Bogie: " + entry.getKey() + ", Capacity: " + entry.getValue());
         }
 
+        // UC7 — Sort Bogies by Capacity (Comparator)
+        System.out.println("\n--- UC7: Sort Bogies by Capacity ---");
+        List<Map.Entry<String, Integer>> listToSort = new ArrayList<>(bogieCapacityMap.entrySet());
+        listToSort.sort(Map.Entry.comparingByValue());
+        for (Map.Entry<String, Integer> entry : listToSort) {
+            System.out.println("Bogie: " + entry.getKey() + " -> " + entry.getValue());
+        }
+
     }
 }

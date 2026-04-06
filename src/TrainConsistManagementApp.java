@@ -45,5 +45,13 @@ public class TrainConsistManagementApp {
         orderedBogieIds.add("B2");
         System.out.println("Ordered Bogie IDs: " + orderedBogieIds);
 
+        // UC5 — Preserve Insertion Order of Bogies (LinkedHashSet)
+        System.out.println("\n--- UC5: Preserve Insertion Order ---");
+        Set<String> insertionOrderedBogies = new LinkedHashSet<>();
+        insertionOrderedBogies.add("Gen-1");
+        insertionOrderedBogies.add("SL-1");
+        insertionOrderedBogies.add("AC-1");
+        System.out.println("Insertion Ordered Bogies: " + insertionOrderedBogies);
+
     }
 }

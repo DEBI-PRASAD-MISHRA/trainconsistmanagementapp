@@ -109,5 +109,16 @@ public class TrainConsistManagementApp {
             System.out.println("Cargo Code '" + code + "' valid? " + isCargoValid);
         }
 
+        // UC12 — Safety Compliance Check for Goods Bogies
+        System.out.println("\n--- UC12: Safety Compliance Check ---");
+        Map<String, Integer> goodsBogies = new HashMap<>();
+        goodsBogies.put("G1", 45);
+        goodsBogies.put("G2", 60);
+        goodsBogies.put("G3", 50);
+        for (Map.Entry<String, Integer> entry : goodsBogies.entrySet()) {
+            boolean isCompliant = entry.getValue() <= 50;
+            System.out.println("Bogie " + entry.getKey() + " (Load: " + entry.getValue() + " tons) - Compliant: " + isCompliant);
+        }
+
     }
 }

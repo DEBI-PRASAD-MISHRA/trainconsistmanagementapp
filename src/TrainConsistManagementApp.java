@@ -37,5 +37,13 @@ public class TrainConsistManagementApp {
         uniqueBogieIds.add("B1-Sleeper"); // Duplicate
         System.out.println("Unique Bogie IDs (Duplicates rejected): " + uniqueBogieIds);
 
+        // UC4 — Maintain Ordered Bogie IDs (TreeSet)
+        System.out.println("\n--- UC4: Maintain Ordered Bogie IDs ---");
+        Set<String> orderedBogieIds = new TreeSet<>();
+        orderedBogieIds.add("C3");
+        orderedBogieIds.add("A1");
+        orderedBogieIds.add("B2");
+        System.out.println("Ordered Bogie IDs: " + orderedBogieIds);
+
     }
 }

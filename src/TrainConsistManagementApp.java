@@ -29,5 +29,13 @@ public class TrainConsistManagementApp {
         }
         totalBogieCount += arrayListBogies.size();
 
+        // UC3 — Track Unique Bogie IDs (Set — HashSet)
+        System.out.println("\n--- UC3: Track Unique Bogie IDs ---");
+        Set<String> uniqueBogieIds = new HashSet<>();
+        uniqueBogieIds.add("B1-Sleeper");
+        uniqueBogieIds.add("B2-Sleeper");
+        uniqueBogieIds.add("B1-Sleeper"); // Duplicate
+        System.out.println("Unique Bogie IDs (Duplicates rejected): " + uniqueBogieIds);
+
     }
 }

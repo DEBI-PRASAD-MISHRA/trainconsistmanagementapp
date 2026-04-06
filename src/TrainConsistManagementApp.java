@@ -92,5 +92,11 @@ public class TrainConsistManagementApp {
             System.out.println("Type: " + entry.getKey() + " -> " + entry.getValue());
         }
 
+        // UC10 — Count Total Seats in Train (reduce)
+        System.out.println("\n--- UC10: Total Seats (reduce) ---");
+        int totalSeats = bogieCapacityMap.values().stream()
+                .reduce(0, Integer::sum);
+        System.out.println("Total Seating Capacity: " + totalSeats);
+
     }
 }

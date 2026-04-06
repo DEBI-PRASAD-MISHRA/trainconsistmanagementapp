@@ -53,5 +53,17 @@ public class TrainConsistManagementApp {
         insertionOrderedBogies.add("AC-1");
         System.out.println("Insertion Ordered Bogies: " + insertionOrderedBogies);
 
+        // UC6 — Map Bogie to Capacity (HashMap)
+        System.out.println("\n--- UC6: Map Bogie to Capacity ---");
+        Map<String, Integer> bogieCapacityMap = new HashMap<>();
+        bogieCapacityMap.put("B1-Sleeper", 72);
+        bogieCapacityMap.put("B2-Sleeper", 72);
+        bogieCapacityMap.put("B3-AC", 64);
+        bogieCapacityMap.put("B4-AC", 64);
+        bogieCapacityMap.put("B5-General", 90);
+        for (Map.Entry<String, Integer> entry : bogieCapacityMap.entrySet()) {
+            System.out.println("Bogie: " + entry.getKey() + ", Capacity: " + entry.getValue());
+        }
+
     }
 }

@@ -16,5 +16,18 @@ public class TrainConsistManagementApp {
         int totalBogieCount = 0;
         System.out.println("Train ID: " + trainId + ", Name: " + trainName + ", Bogies: " + totalBogieCount);
 
+        // UC2 — Add Passenger Bogies to Train (ArrayList)
+        System.out.println("\n--- UC2: Add Passenger Bogies ---");
+        List<String> arrayListBogies = new ArrayList<>();
+        arrayListBogies.add("B1-Sleeper");
+        arrayListBogies.add("B2-Sleeper");
+        arrayListBogies.add("B3-AC");
+        arrayListBogies.add("B4-AC");
+        arrayListBogies.add("B5-General");
+        for (int i = 0; i < arrayListBogies.size(); i++) {
+            System.out.println("Index " + i + ": " + arrayListBogies.get(i));
+        }
+        totalBogieCount += arrayListBogies.size();
+
     }
 }
